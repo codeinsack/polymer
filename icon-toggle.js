@@ -27,18 +27,18 @@ class IconToggle extends PolymerElement {
 
   static get template() {
     return html`
-      <style>
-        :host {
-          display: inline-block;
-        }
-        iron-icon {
-          fill: rgba(0,0,0,0);
-          stroke: currentcolor;
-        }
-        :host([pressed]) iron-icon {
-          fill: currentcolor;
-        }
-      </style>
+    <style>
+      :host {
+        display: inline-block;
+      }
+      iron-icon {
+        fill: var(--icon-toggle-color);
+        stroke: var(--icon-toggle-outline-color);
+      }
+      :host([pressed]) iron-icon {
+        fill: var(--icon-toggle-pressed-color);
+      }
+    </style>
     
       <iron-icon icon="[[toggleIcon]]"></iron-icon>
     `;

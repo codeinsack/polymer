@@ -4,12 +4,23 @@ import '@polymer/iron-icons/iron-icons.js';
 import './icon-toggle.js';
 
 class DemoElement extends PolymerElement {
+  _message(fav) {
+    if (fav) {
+      return 'You really like me!';
+    }
+    else {
+      return 'Do you like me?';
+    }
+  }
+
   static get template() {
     return html`
       <style>
-        :host {
-          font-family: sans-serif;
-        }
+      :host {
+        font-family: sans-serif;
+        --icon-toggle-color: yellow;
+        --icon-toggle-outline-color: black;
+      }
       </style>
       
       <h3>Statically-configured icon-toggles</h3>
@@ -20,14 +31,6 @@ class DemoElement extends PolymerElement {
       <div><span>[[_message(isFav)]]</span></div>
       <icon-toggle toggle-icon="favorite" pressed="{{isFav}}"></icon-toggle>
     `;
-  }
-  _message(fav) {
-    if (fav) {
-      return 'You really like me!';
-    } 
-    else {
-      return 'Do you like me?';
-    }
   }
 }
 customElements.define('demo-element', DemoElement);
