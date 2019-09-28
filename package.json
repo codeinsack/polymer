@@ -1,0 +1,19 @@
+{
+  "name": "polymer-playground",
+  "main": "polymer-playground.js",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^4.1.2"
+  },
+  "scripts": {
+    "start": "concurrently 'npm run serve' 'npm run watch'",
+    "serve": "polymer serve --port 8082",
+    "watch": "browser-sync start --proxy localhost:8082 --open \"/\" --files \"**/*.js\""
+  }
+}
