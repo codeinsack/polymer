@@ -4,7 +4,7 @@ import '@polymer/iron-icon/iron-icon.js';
 class IconToggle extends PolymerElement {
   constructor() {
     super();
-    this.addEventListener('click', this.toggle.bind(this));
+    // this.addEventListener('click', this.toggle.bind(this));
   }
 
   static get properties() {
@@ -16,13 +16,20 @@ class IconToggle extends PolymerElement {
         type: Boolean,
         value: false,
         notify: true,
-        reflectToAttribute: true
+        reflectToAttribute: true,
+        observer: "_pressedChanged"
       },
     };
   }
 
-  toggle() {
-    this.pressed = !this.pressed;
+  _pressedChanged(newValue, oldValue) {
+    // console.log("newValue", newValue)
+    // console.log("oldValue", oldValue)
+  }
+
+  toggle(event) {
+    console.log("inside icon-toggle", event.target)
+    this.pressed = !this.pressed
   }
 
   static get template() {
@@ -40,7 +47,7 @@ class IconToggle extends PolymerElement {
       }
     </style>
     
-      <iron-icon icon="[[toggleIcon]]"></iron-icon>
+      <iron-icon icon="[[toggleIcon]]" on-click="toggle"></iron-icon>
     `;
   }
 }

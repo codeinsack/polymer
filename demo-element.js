@@ -6,7 +6,7 @@ import "./icon-toggle.js"
 class DemoElement extends PolymerElement {
   constructor() {
     super()
-    console.log("[DemoElement] constructor")
+    // console.log("[DemoElement] constructor")
   }
 
   static get properties() {
@@ -20,7 +20,7 @@ class DemoElement extends PolymerElement {
 
   connectedCallback() {
     super.connectedCallback()
-    console.log("[DemoElement] connectedCallback", this.book)
+    // console.log("[DemoElement] connectedCallback", this.book)
   }
   //
   // disconnectedCallback() {
@@ -30,7 +30,7 @@ class DemoElement extends PolymerElement {
   //
   ready() {
     super.ready()
-    console.log("[DemoElement] ready")
+    // console.log("[DemoElement] ready")
     this.book = { title: "The Catcher in the Rye" }
   }
   //
